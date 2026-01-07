@@ -1,4 +1,6 @@
 import BalanceCard from "@/components/dashboard/BalanceCard"
+import QuickActions from "@/components/dashboard/QuickActions"
+import RecentTransactions from "@/components/dashboard/RecentTransactions"
 import AppLayout from "@/components/layout/AppLayout"
 import { Bell, QrCode } from "lucide-react"
 
@@ -35,7 +37,13 @@ const Index = () => {
         </header>
 
         {/* balance card */}
-        <BalanceCard  />
+        <BalanceCard balance={1234567.08}  />
+ 
+        {/* quick actions */}
+        <QuickActions />
+        
+        {/* recent transactions */}
+        <RecentTransactions />
       </div>
     </AppLayout>
   )
