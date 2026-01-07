@@ -1,9 +1,21 @@
-import React from 'react'
+import type { ReactNode } from "react";
+import BottomNav from "./BottomNav";
+import { cn } from "@/lib/utils";
 
-const AppLayout = () => {
-  return (
-    <div>AppLayout</div>
-  )
+interface AppLayoutProps {
+  children: ReactNode;
+  showNav?: boolean;
 }
 
-export default AppLayout
+const AppLayout = ({ children, showNav = true }: AppLayoutProps) => {
+  return (
+    <div className="min-h-screen bg-background">
+      <main className={cn("pb-24", showNav && "pb-24")}>
+        {children}
+      </main>
+      {showNav && <BottomNav />}
+    </div>
+  );
+};
+
+export default AppLayout;
