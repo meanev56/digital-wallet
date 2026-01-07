@@ -121,3 +121,162 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ===============================
+   COMPONENT UTILITIES (Tailwind v4)
+   =============================== */
+
+@utility glass-card {
+  @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  box-shadow: var(--shadow-md);
+}
+
+@utility balance-card {
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+@utility quick-action-btn {
+  @apply flex flex-col items-center gap-2 p-4 rounded-2xl bg-card border border-border/50 transition-all duration-300;
+  box-shadow: var(--shadow-sm);
+}
+
+@utility quick-action-btn-hover {
+  @apply scale-105;
+  box-shadow: var(--shadow-md);
+}
+
+@utility quick-action-btn-active {
+  @apply scale-95;
+}
+
+@utility transaction-item {
+  @apply flex items-center gap-4 p-4 rounded-xl bg-card border border-border/30 transition-all duration-200;
+}
+
+@utility transaction-item-hover {
+  @apply bg-secondary/50;
+}
+
+@utility bottom-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-xl border-t border-border/50;
+  box-shadow: 0 -4px 24px hsl(210 40% 12% / 0.08);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@utility nav-item {
+  @apply flex flex-col items-center gap-1 py-2 px-4 rounded-xl transition-all duration-200;
+}
+
+@utility nav-item-active {
+  @apply text-primary bg-primary-light;
+}
+
+@utility input-field {
+  @apply w-full px-4 py-3 rounded-xl bg-secondary border border-border/50
+    text-foreground placeholder:text-muted-foreground
+    focus:outline-none focus:ring-2 focus:ring-primary/30
+    focus:border-primary transition-all duration-200;
+}
+
+@utility btn-primary {
+  background: var(--gradient-primary);
+  @apply text-primary-foreground font-semibold py-4 px-6 rounded-xl transition-all duration-300;
+  box-shadow: var(--shadow-md);
+}
+
+@utility btn-primary-hover {
+  @apply opacity-90;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+@utility btn-primary-active {
+  @apply scale-[0.98];
+}
+
+@utility section-card {
+  @apply bg-card rounded-2xl p-5 border border-border/30;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===============================
+   ANIMATIONS (Tailwind v4)
+   =============================== */
+
+@utility animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@utility animate-scale-in {
+  animation: scaleIn 0.2s ease-out;
+}
+
+@utility animate-bounce-in {
+  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===============================
+   KEYFRAMES
+   =============================== */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===============================
+   SCROLLBAR
+   =============================== */
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
